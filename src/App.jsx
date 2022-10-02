@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
-import CardCharacter from './assets/components/CardCharacter/CardCharacter'
+import ResidentInfo from './assets/components/ResidentInfo/ResidentInfo'
 import CardLocation from './assets/components/CardLocation/CardLocation'
 import getRandomNumber from './assets/utils/getRandomNumber'
 
@@ -59,7 +59,7 @@ function App() {
       <div className="CardCharacter">
       {
         info?.residents.map(url => (
-          <CardCharacter  
+          <ResidentInfo  
             key = {url}
             url = {url}      
           />

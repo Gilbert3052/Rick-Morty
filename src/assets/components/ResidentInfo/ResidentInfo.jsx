@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import "./CardCharacters.css"
+import "./ResidentInfo.css"
 
-const CardCharacter = ({url}) => {
+const ResidentInfo = ({url}) => {
 
   const [user, setUser] = useState()
 
@@ -12,7 +12,7 @@ const CardCharacter = ({url}) => {
       .then(res => setUser(res.data))
       .catch(err => console.log(err))
 
-    
+     
   }, [])
 
   return (
@@ -41,9 +41,8 @@ const CardCharacter = ({url}) => {
           <p>Episodes: </p> <span>{user?.episode.length}</span>
         </div>
       </div>
-      
     </div>        
   )
 }
 
-export default CardCharacter
+export default ResidentInfo

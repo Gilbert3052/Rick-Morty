@@ -12,17 +12,16 @@
 
 .location__items {
     display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    align-items: left;
     gap: 2rem;
 }
  
 .location__item {
     width: max-content;
-    align-self: center;
+    line-height: 150%;
 }
 
 .location__title {
@@ -33,6 +32,21 @@
 @media only screen and (min-width: 600px) {
     .Location {
         width: 95%;
+    }
+
+    .location__items {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 680px) {
+    .Location {
+        width: 95%;
+    }
+
+    .location__items {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
