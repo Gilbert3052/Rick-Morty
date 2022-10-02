@@ -1,19 +1,10 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import useFetch from '../../hooks/useFetch'
 import "./ResidentInfo.css"
 
 const ResidentInfo = ({url}) => {
 
-  const [user, setUser] = useState()
-
-  useEffect(() => {
-
-    axios.get(url)
-      .then(res => setUser(res.data))
-      .catch(err => console.log(err))
-
-     
-  }, [])
+  let user = useFetch(url);
 
   return (
     <div className="card__character">

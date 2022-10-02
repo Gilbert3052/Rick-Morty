@@ -1,22 +1,23 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
-import ResidentInfo from './assets/components/ResidentInfo/ResidentInfo'
-import CardLocation from './assets/components/CardLocation/CardLocation'
 import getRandomNumber from './assets/utils/getRandomNumber'
+import Loading from './assets/components/Loading/Loading'
+import AllTheBody from './assets/components/AllTheBody/AllTheBody'
 
 function App() {
 
   const [inputLocation, setInputLocation] = useState("")
   const [info, setInfo] = useState()
 
+
   const handleInputLocation = e => {
     e.preventDefault()
     setInputLocation(e.target.search.value);
   }
- 
+
   let numberRandom = getRandomNumber()
-  
+
   useEffect(() => {
  
     if(inputLocation){
@@ -24,54 +25,28 @@ function App() {
     }
 
     let URL= `https://rickandmortyapi.com/api/location/${numberRandom}`
-    
 
-    axios.get(URL)
-      .then(res => setInfo(res.data))
-      .catch(err => console.log(err))
+    setTimeout(() => {
+      axios.get(URL)
+        .then(res => setInfo(res.data))
+        .catch(err => console.log(err))
+    }, 2000);
 
   }, [inputLocation])
-  
-  const changeColor = () => {
-    if(color){
-
-    }else {
-
-    }
-  }
 
   return (
     <div className="App">
-      
-      <CardLocation  
-        info = {info}      
-      /> 
-  
-      <form onSubmit={handleInputLocation}>
-        <input 
-          id='search' 
-          type="text" 
-          placeholder=" ID Location (1 to 126)"
-        />
-        <button>Search</button>
-      </form>
-
-      <div className="residents__tittle">
-        <h1>Residents</h1>
-      </div>
-
-      <div className="CardCharacter">        
       {
-        info?.residents.map(url => (
-          <ResidentInfo  
-            key = {url}
-            url = {url}      
-          />
-        ))
+        info ?
+          (
+            <AllTheBody 
+              info = {info}
+              handleInputLocation = {handleInputLocation}
+            />
+          )
+        :
+        <Loading />
       }
-      </div>
-      
-      
     </div>
   )
 }
