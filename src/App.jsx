@@ -56,7 +56,11 @@ function App() {
         <button>Search</button>
       </form>
 
-      <div className="CardCharacter">
+      <div className="residents__tittle">
+        <h1>Residents</h1>
+      </div>
+
+      <div className="CardCharacter">        
       {
         info?.residents.map(url => (
           <ResidentInfo  

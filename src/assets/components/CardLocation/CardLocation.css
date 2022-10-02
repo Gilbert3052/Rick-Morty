@@ -6,7 +6,7 @@
     width: 100%;
     align-items: center;
     color: gray;
-    background: rgba(27, 27, 47, 1);
+    background: rgba(27, 27, 47, .7);
     border-radius: 30px;
 }
 
