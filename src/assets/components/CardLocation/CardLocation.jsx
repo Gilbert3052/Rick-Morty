@@ -2,7 +2,6 @@ import React from 'react'
 import "./CardLocation.css"
 
 const CardLocation = ({info}) => {
-    console.log(info);
   return (
     <div className='Location'>
         <div className="location__title">
@@ -20,7 +19,7 @@ const CardLocation = ({info}) => {
                 <h3>Population: </h3> <span>{info?.residents.length}</span>
             </div>
         </div>
-    </div>
+    </div> 
   )
 }
 

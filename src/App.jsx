@@ -14,7 +14,7 @@ function App() {
     e.preventDefault()
     setInputLocation(e.target.search.value);
   }
-
+ 
   let numberRandom = getRandomNumber()
   
   useEffect(() => {

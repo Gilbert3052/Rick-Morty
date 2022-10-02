@@ -5,7 +5,6 @@ import "./CardCharacters.css"
 const CardCharacter = ({url}) => {
 
   const [user, setUser] = useState()
-  const [color, setColor] = useState("gray")
 
   useEffect(() => {
 
@@ -13,30 +12,13 @@ const CardCharacter = ({url}) => {
       .then(res => setUser(res.data))
       .catch(err => console.log(err))
 
-    console.log(user);
+    
   }, [])
-
-  // useEffect(() => {
-  //   changeColor()
-  // }, [])
-  
-
-  // const changeColor = () => {
-  //   if(user?.status === "Dead"){
-  //     setColor("red")
-  //   }else if(user?.status === "Alive"){
-  //     setColor("green")
-  //   }
-  // }
-
-  // const objColor = {
-  //   borderColor: color
-  // }
 
   return (
     <div className="card__character">
       <div className="card__title">
-        <div className="card__img">
+        <div className={`card__img ${user?.status}`}>
           <img src={user?.image} alt={user?.name} />
         </div>
         <div className="card__title_info">
