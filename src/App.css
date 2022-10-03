@@ -8,7 +8,7 @@
 
 body {
   background: #162447;
-  background-image: url("bgLocation3-mobile.png");
+  background-image: url("./assets/bgLocation3-mobile.png");
   background-size: 100% 800px;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
@@ -103,7 +103,7 @@ button:hover {
 
 @media only screen and (min-width: 800px) {
   body {
-    background-image: url("bgLocation3.png");
+    background-image: url("./assets/bgLocation3.png");
   }
   form {
     width: 80%;
