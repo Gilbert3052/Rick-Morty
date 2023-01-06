@@ -25,6 +25,7 @@
 
 .card__img {
     width: 50%;
+    
 }
 
 .card__title_info {
@@ -35,20 +36,18 @@
     width: 80%;
     height: 80%;
     border-radius: 50%;
-    border-width: 4px;
-    border: 3px solid;
 }
 
 .Dead img{
-    border-color: red;
+    box-shadow: 0 0 23px red;
 }
 
 .Alive img{
-    border-color: green;
+    box-shadow: 0 0 23px green;
 }
 
 .unknown img{
-    border-color: gray;
+    box-shadow: 0 0 23px gray;
 }
 
 span {

@@ -6,7 +6,7 @@ const ResidentInfo = ({url}) => {
 
   let user = useFetch(url);
 
-  return (
+  return ( 
     <div className="card__character">
       <div className="card__title">
         <div className={`card__img ${user?.status}`}>
