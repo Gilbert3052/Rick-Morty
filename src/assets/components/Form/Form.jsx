@@ -2,7 +2,7 @@ import React from 'react'
 
 const Form = ({handleInputLocation}) => {
   return (
-    <div>
+    <div className='Form'>
         <form onSubmit={handleInputLocation}>
         <input 
           id='search' 

@@ -1,0 +1,33 @@
+.Pagination {
+    margin: 1.5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: .3rem;
+}
+
+.btn__pagination {
+    background: rgb(176, 175, 175);
+    cursor: pointer;
+    color: black;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.btn__pagination:hover {
+    background-color: rgba(31, 64, 104, 0.8);
+    color: white;
+    border-radius: 50%;
+}
+
+.btn__active {
+    background-color: rgba(31, 64, 104, 0.8);
+    color: white;
+    border-radius: 50%;
+}
+
+box-icon {
+    cursor: pointer;
+}

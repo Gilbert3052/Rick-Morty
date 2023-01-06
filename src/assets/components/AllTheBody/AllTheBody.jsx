@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CardCharacter from '../CardCharacter/CardCharacter'
 import CardLocation from '../CardLocation/CardLocation'
 import Form from '../Form/Form'
 import NoResidents from '../NoResidents/NoResidents'
+import Pagination from '../Pagination/Pagination'
 import Residents from '../Residents/Residents'
 
-const AllTheBody = ({info, handleInputLocation}) => {
+const AllTheBody = ({info, handleInputLocation, page, setPage, characterPerPage}) => { 
+
   return (
     <div>
         <CardLocation 
@@ -16,6 +18,13 @@ const AllTheBody = ({info, handleInputLocation}) => {
             handleInputLocation = {handleInputLocation}
         />
         
+        <Pagination 
+          page = {page}
+          charactersLength = {info?.residents.length}
+          characterPerPage = {characterPerPage}
+          setPage = {setPage}
+        />
+
         <Residents />
 
         {
@@ -23,11 +32,20 @@ const AllTheBody = ({info, handleInputLocation}) => {
             ?
                 <CardCharacter 
                     info = {info}
+                    charactersPerPage = {characterPerPage}
+                    page = {page}
                 />
             :
                 <NoResidents />
         }
         
+        <Pagination 
+          page = {page}
+          charactersLength = {info?.residents.length}
+          characterPerPage = {characterPerPage}
+          setPage = {setPage}
+        />
+
     </div>
   )
 }
