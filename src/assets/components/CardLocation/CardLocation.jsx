@@ -5,18 +5,18 @@ const CardLocation = ({info}) => {
   return (
     <div className='Location'>
         <div className="location__title">
-            <h1>{info?.name}</h1>
+            <p>{info?.name}</p>
         </div>
         <div className="space"></div>
         <div className="location__items">
             <div className="location__item">
-                <h3>Type: </h3> <span>{info?.type}</span>
+                <p>Type: </p> <span>{info?.type}</span>
             </div>
             <div className="location__item">
-                <h3>Dimension: </h3> <span>{info?.dimension}</span>
+                <p>Dimension: </p> <span>{info?.dimension}</span>
             </div>
             <div className="location__item">
-                <h3>Population: </h3> <span>{info?.residents.length}</span>
+                <p>Population: </p> <span>{info?.residents.length}</span>
             </div>
         </div>
     </div> 
